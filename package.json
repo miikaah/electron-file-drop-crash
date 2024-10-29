@@ -1,0 +1,27 @@
+{
+  "name": "electron-file-drop-crash",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch ./electron/src --ext ts --exec npm start",
+    "dev:front": "env-cmd -f .env.electron.local vite --port 3000 --mode electron",
+    "start": "env-cmd -f .env electron electron/scripts/index.js"
+  },
+  "author": "Miika Henttonen miika.henttonen@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.8.1",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "electron": "33.0.2",
+    "env-cmd": "10.1.0",
+    "nodemon": "3.1.7",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.3",
+    "vite": "5.4.10"
+  }
+}
