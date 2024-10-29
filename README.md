@@ -4,10 +4,10 @@
 
 This repo showcases a crash in Electron on Linux. I am pretty sure the crash originates from V8.
 
-Electron v33.0.2
-Linux Mint 22 Cinnamon
-Linux Kernel 6.8.0-47-generic
-NodeJS (see version in .nvmrc)
+- Electron v33.0.2
+- Linux Mint 22 Cinnamon
+- Linux Kernel 6.8.0-47-generic
+- NodeJS (see version in .nvmrc)
 
 ## Setup
 
@@ -46,7 +46,7 @@ contextBridge.exposeInMainWorld("electron", {
 
 The actual handler can probably return anything, in this repro it just returns an empty array.
 
-The context of this is that I develop a music player and I would like to drag and drop files into it. However, the path attribute that used to exist in the `dataTransfer.files` is no longer preferred, so in order to get the actual path of the file (which is needed for sticking it into an audio element src in order to play the file), I tried using webUtils.
+The context of this is that I develop a music player and I would like to drag and drop files into it. However, the path attribute that used to exist in the `dataTransfer.files` object is no longer preferred, so in order to get the actual path of the file (which is needed for sticking it into an audio element src in order to play the file), I tried using webUtils.
 
 If you have trouble reproducing this on your machine, using the filepath to play it in an audio element I have found is a surefire way to crash the app. I have not had a hard time reproducing this many times however so I decided to not complicate the repro by adding the audio element.
 
